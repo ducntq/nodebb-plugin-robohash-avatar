@@ -1,14 +1,19 @@
 'use strict';
 
 const winston = require.main.require('winston');
+var User = require.main.require('./src/user');
 
 const plugin = {};
 
-plugin.process = async (data, callback) => {
-	let avatar = `https://robohash.org/${data.userData.username}.png`;
-	data.userData.picture = avatar;
-	winston.info(`[plugins/robo-hash] Set avatar for user ${data.userData.username} to ${avatar}`);
-	callback(data);
+plugin.process = async (uid) => {
+	const userslug = await user.getUserField(req.uid, 'userslug');
+	let avatar = `https://robohash.org/${userslug}.png`;
+	winston.info(`[plugins/robo-hash] Set avatar for user ${userslug} to ${avatar}`);
+	await User.updateProfile(uid, {
+		uid: data.uid,
+		uploadedpicture: avatar,
+		picture: avatar,
+	}, ['uploadedpicture', 'picture']);
 };
 
 module.exports = plugin;
