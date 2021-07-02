@@ -10,7 +10,7 @@ plugin.process = async (uid) => {
 	let avatar = `https://robohash.org/${userslug}.png`;
 	winston.info(`[plugins/robo-hash] Set avatar for user ${userslug} to ${avatar}`);
 	await User.updateProfile(uid, {
-		uid: data.uid,
+		uid: uid,
 		uploadedpicture: avatar,
 		picture: avatar,
 	}, ['uploadedpicture', 'picture']);
