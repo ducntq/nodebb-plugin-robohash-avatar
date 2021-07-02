@@ -5,7 +5,7 @@ var User = require.main.require('./src/user');
 
 const plugin = {};
 
-plugin.process = async (uid) => {
+plugin.process = async (uid, next) => {
 	const userslug = await User.getUserField(uid, 'userslug');
 	let avatar = `https://robohash.org/${userslug}.png`;
 	winston.info(`[plugins/robo-hash] Set avatar for user ${userslug} to ${avatar}`);
@@ -14,6 +14,7 @@ plugin.process = async (uid) => {
 		uploadedpicture: avatar,
 		picture: avatar,
 	}, ['uploadedpicture', 'picture']);
+	return {uid: uid, next: next};
 };
 
 module.exports = plugin;
