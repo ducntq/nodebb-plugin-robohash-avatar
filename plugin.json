@@ -1,29 +1,10 @@
 {
-	"id": "nodebb-plugin-quickstart",
-	"url": "https://github.com/NodeBB/nodebb-plugin-quickstart",
+	"id": "nodebb-plugin-robohash-avatar",
+	"url": "https://github.com/ducntq/nodebb-plugin-robohash-avatar",
 	"library": "./library.js",
 	"hooks": [
 		{
-			"hook": "static:app.load", "method": "init"
-		},
-		{
-			"hook": "static:api.routes", "method": "addRoutes"
-		},
-		{
-			"hook": "filter:admin.header.build", "method": "addAdminNavigation"
+			"hook": "filter:register.check", "method": "process"
 		}
-	],
-	"staticDirs": {
-		"static": "./static"
-	},
-	"less": [
-		"static/style.less"
-	],
-	"scripts": [
-		"static/lib/main.js"
-	],
-	"acpScripts": [
-		"static/lib/admin.js"
-	],
-	"templates": "static/templates"
+	]
 }

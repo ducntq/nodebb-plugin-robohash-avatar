@@ -1,17 +1,15 @@
 {
-  "name": "nodebb-plugin-quickstart",
-  "version": "0.4.1",
-  "description": "A starter kit for quickly creating NodeBB plugins",
+  "name": "nodebb-plugin-robohash-avatar",
+  "version": "0.1.0",
+  "description": "Generate random avatar from robohash upon registration complete",
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/psychobunny/nodebb-plugin-quickstart"
+    "url": "https://github.com/ducntq/nodebb-plugin-robohash-avatar"
   },
   "keywords": [
     "nodebb",
-    "plugin",
-    "quickstart",
-    "shell"
+    "plugin"
   ],
   "husky": {
     "hooks": {
@@ -26,12 +24,12 @@
     ]
   },
   "author": {
-    "name": "psychobunny",
-    "email": "psycho.bunny@hotmail.com"
+    "name": "ducntq",
+    "email": "ducntq@gmail.com"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/psychobunny/nodebb-plugin-quickstart/issues"
+    "url": "https://github.com/ducntq/nodebb-plugin-robohash-avatar/issues"
   },
   "readmeFilename": "README.md",
   "nbbpm": {
